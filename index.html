@@ -1,0 +1,44 @@
+def mulai_game():
+    print("Selamat datang di Gua Misterius!")
+    print("Lo berdiri di depan pintu gua. Mau masuk atau kabur?")
+    
+    pilihan = input(">> (masuk/kabur): ").lower()
+    
+    if pilihan == "masuk":
+        ruangan_1()
+    elif pilihan == "kabur":
+        print("Lo kabur ketakutan... Game over.")
+    else:
+        print("Gak ngerti maksud lo. Coba lagi.")
+        mulai_game()
+
+def ruangan_1():
+    print("\nLo masuk ke ruangan pertama. Ada dua jalan: kiri dan kanan.")
+    pilihan = input(">> (kiri/kanan): ").lower()
+    
+    if pilihan == "kiri":
+        jebakan()
+    elif pilihan == "kanan":
+        ruangan_2()
+    else:
+        print("Pilihan gak jelas. Ulang lagi.")
+        ruangan_1()
+
+def jebakan():
+    print("\nOops! Lo masuk ke jebakan berduri. Game over.")
+
+def ruangan_2():
+    print("\nLo menemukan peti harta karun!")
+    print("Tapi ada monster tidur di sebelahnya. Mau ambil harta atau kabur?")
+    pilihan = input(">> (ambil/kabur): ").lower()
+    
+    if pilihan == "ambil":
+        print("Monster bangun dan makan lo. Game over.")
+    elif pilihan == "kabur":
+        print("Lo kabur dengan selamat. Selamat, lo selamat!")
+    else:
+        print("Hah? Gak jelas. Coba lagi.")
+        ruangan_2()
+
+# Mulai game
+mulai_game()
